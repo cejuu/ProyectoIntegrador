@@ -1,4 +1,4 @@
- package Usuario;
+package Usuario;
 
 import java.awt.Container;
 import java.awt.Dimension;
@@ -44,12 +44,14 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTable;
 
-public class PartidoTenis extends JFrame{
+public class infoevento extends JFrame{
 
 	private JTextField txtUbicacin;
 	private Controlador controlador;
 	private Modelo modelo;
+	private JTable table;
 	public void setControlador(Controlador controlador) {
 		this.controlador = controlador;
 	}
@@ -58,14 +60,11 @@ public class PartidoTenis extends JFrame{
 		
 	}
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PartidoTenis window = new PartidoTenis();
+					infoevento window = new infoevento();
 					window.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -77,7 +76,7 @@ public class PartidoTenis extends JFrame{
 	/**
 	 * Create the application.
 	 */
-	public PartidoTenis() {
+	public infoevento() {
 		initialize();
 	}
 
@@ -86,9 +85,9 @@ public class PartidoTenis extends JFrame{
 	 */
 	public void initialize() {
 		setIconImage(
-				Toolkit.getDefaultToolkit().getImage(PartidoTenis.class.getResource("/imagenes/Sin_titulo.png")));
+				Toolkit.getDefaultToolkit().getImage(infoevento.class.getResource("/imagenes/Sin_titulo.png")));
 		getContentPane().setBackground(Color.WHITE);
-		setBounds(100, 100, 959, 643);
+		setBounds(100, 100, 959, 639);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		Container contenedor = getContentPane();
 		contenedor.setLayout(null);
@@ -104,7 +103,7 @@ public class PartidoTenis extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnProfile.setIcon(new ImageIcon(PartidoTenis.class.getResource("/imagenes/Perfil (2).png")));
+		btnProfile.setIcon(new ImageIcon(infoevento.class.getResource("/imagenes/Perfil (2).png")));
 		btnProfile.setBackground(new Color(0, 0, 0, 0));
 		btnProfile.setOpaque(false);
 		btnProfile.setBounds(884, 1, 51, 51);
@@ -113,19 +112,19 @@ public class PartidoTenis extends JFrame{
 		JButton btnFriends = new JButton("");
 		btnFriends.setBackground(new Color(0, 0, 0, 0));
 		btnFriends.setOpaque(false);
-		btnFriends.setIcon(new ImageIcon(PartidoTenis.class.getResource("/imagenes/personas (1).png")));
+		btnFriends.setIcon(new ImageIcon(infoevento.class.getResource("/imagenes/personas (1).png")));
 		btnFriends.setBounds(813, 1, 51, 51);
 		desktopPane.add(btnFriends);
 
 		JButton btnHome = new JButton("");
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				controlador.cambioPantalla(12,2);
+				controlador.cambioPantalla(13,2);
 			}
 		});
 		btnHome.setBounds(10, 8, 70, 37);
 		desktopPane.add(btnHome);
-		btnHome.setIcon(new ImageIcon(PartidoTenis.class.getResource("/imagenes/Sin_titulo2 (1).png")));
+		btnHome.setIcon(new ImageIcon(infoevento.class.getResource("/imagenes/Sin_titulo2 (1).png")));
 		btnHome.setBackground(new Color(0, 0, 0, 0));
 		btnHome.setOpaque(false);
 		
@@ -141,7 +140,7 @@ public class PartidoTenis extends JFrame{
 		btnEventos.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				controlador.cambioPantalla(12,5);
+				controlador.cambioPantalla(13,5);
 			}
 		});
 		btnEventos.setFont(new Font("Verdana", Font.PLAIN, 14));
@@ -154,7 +153,7 @@ public class PartidoTenis extends JFrame{
 		btnDeportes.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				controlador.cambioPantalla(12,8);
+				controlador.cambioPantalla(13,8);
 			}
 		});
 		btnDeportes.setFont(new Font("Verdana", Font.PLAIN, 14));
@@ -209,7 +208,7 @@ public class PartidoTenis extends JFrame{
 		panelPadel.setLayout(null);
 		panelPadel.setBackground(new Color(255, 248, 248));
 		panelPadel.setBounds(153, 53, 792, 553);
-		panelPadel.setPreferredSize(new Dimension(752, 700));
+		panelPadel.setPreferredSize(new Dimension(752, 825));
 		
 		JLabel lblNewLabel = new JLabel("Ubicaci\u00F3n");
 		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 20));
@@ -219,11 +218,12 @@ public class PartidoTenis extends JFrame{
 		JSeparator separator = new JSeparator();
 		separator.setBackground(new Color(240, 128, 128));
 		separator.setForeground(new Color(240, 128, 128));
-		separator.setBounds(69, 216, 268, 14);
+		separator.setBounds(64, 216, 268, 14);
 		panelPadel.add(separator);
 		
 		txtUbicacin = new JTextField();
-		txtUbicacin.setText("Centro Deportivo Municipal Orcasur. Madrid");
+		txtUbicacin.setEditable(false);
+		txtUbicacin.setText("Zaragoza P\u00E1del Club, OFICINAS 15-17, C. Bernardo Fita, 50005 Zaragoza");
 		txtUbicacin.setBackground(new Color(255, 228, 228));
 		txtUbicacin.setFont(new Font("Verdana", Font.PLAIN, 17));
 		txtUbicacin.setBounds(69, 240, 653, 31);
@@ -231,9 +231,20 @@ public class PartidoTenis extends JFrame{
 		txtUbicacin.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Desunirse");
+		btnNewButton.setBackground(new Color(240, 128, 128));
+		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		btnNewButton.setBounds(302, 533, 179, 49);
+		btnNewButton.setBounds(302, 748, 179, 49);
 		panelPadel.add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(btnNewButton.getText().equals("Desunirse")) {
+					btnNewButton.setText("Unirse");
+				}else {
+					btnNewButton.setText("Desunirse");
+				}
+			}
+		});
 		
 		JLabel lblDescripcin = new JLabel("Descripci\u00F3n");
 		lblDescripcin.setFont(new Font("Verdana", Font.PLAIN, 20));
@@ -243,25 +254,18 @@ public class PartidoTenis extends JFrame{
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBackground(new Color(240, 128, 128));
 		separator_1.setForeground(new Color(240, 128, 128));
-		separator_1.setBounds(69, 331, 268, 3);
+		separator_1.setBounds(64, 331, 268, 3);
 		panelPadel.add(separator_1);
 		
-		JEditorPane dtrpnLoremIpsumIs = new JEditorPane();
-		dtrpnLoremIpsumIs.setFont(new Font("Verdana", Font.PLAIN, 15));
-		dtrpnLoremIpsumIs.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.");
-		dtrpnLoremIpsumIs.setBackground(new Color(255, 228, 228));
-		dtrpnLoremIpsumIs.setBounds(69, 350, 653, 145);
-		panelPadel.add(dtrpnLoremIpsumIs);
-		
 		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setIcon(new ImageIcon(PartidoTenis.class.getResource("/imagenes/undo-alt-free-icon-font.png")));
+		btnNewButton_1.setIcon(new ImageIcon(infoevento.class.getResource("/imagenes/undo-alt-free-icon-font.png")));
 		btnNewButton_1.setBounds(10, 10, 40, 40);
 		btnNewButton_1.setBackground(new Color(0, 0, 0, 0));
 		btnNewButton_1.setOpaque(false);
 		panelPadel.add(btnNewButton_1);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(153, 53, 792, 553);
+		scrollPane.setBounds(153, 53, 792, 556);
 		scrollPane.setViewportView(panelPadel);
 		scrollPane.getVerticalScrollBar().setUnitIncrement(10);
 		
@@ -271,17 +275,17 @@ public class PartidoTenis extends JFrame{
 		lblNewLabel_3.setBounds(251, 10, 289, 49);
 		panelPadel.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("Alto");
+		JLabel lblNewLabel_4 = new JLabel("Medio");
 		lblNewLabel_4.setFont(new Font("Verdana", Font.PLAIN, 20));
 		lblNewLabel_4.setBounds(69, 114, 179, 42);
 		panelPadel.add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_4_1 = new JLabel("30-35 a\u00F1os");
+		JLabel lblNewLabel_4_1 = new JLabel("18-25 a\u00F1os");
 		lblNewLabel_4_1.setFont(new Font("Verdana", Font.PLAIN, 20));
 		lblNewLabel_4_1.setBounds(302, 114, 179, 42);
 		panelPadel.add(lblNewLabel_4_1);
 		
-		JLabel lblNewLabel_4_2 = new JLabel("27/06/2022");
+		JLabel lblNewLabel_4_2 = new JLabel("28/05/2022");
 		lblNewLabel_4_2.setFont(new Font("Verdana", Font.PLAIN, 20));
 		lblNewLabel_4_2.setBounds(543, 114, 179, 42);
 		panelPadel.add(lblNewLabel_4_2);
@@ -294,7 +298,7 @@ public class PartidoTenis extends JFrame{
 		JSeparator separator_1_1 = new JSeparator();
 		separator_1_1.setForeground(new Color(240, 128, 128));
 		separator_1_1.setBackground(new Color(240, 128, 128));
-		separator_1_1.setBounds(543, 109, 178, 3);
+		separator_1_1.setBounds(538, 109, 178, 3);
 		panelPadel.add(separator_1_1);
 		
 		JLabel lblAos = new JLabel("Edad");
@@ -305,7 +309,7 @@ public class PartidoTenis extends JFrame{
 		JSeparator separator_1_1_1 = new JSeparator();
 		separator_1_1_1.setForeground(new Color(240, 128, 128));
 		separator_1_1_1.setBackground(new Color(240, 128, 128));
-		separator_1_1_1.setBounds(302, 109, 178, 3);
+		separator_1_1_1.setBounds(297, 109, 178, 3);
 		panelPadel.add(separator_1_1_1);
 		
 		JLabel lblNivel = new JLabel("Nivel");
@@ -316,16 +320,51 @@ public class PartidoTenis extends JFrame{
 		JSeparator separator_1_1_2 = new JSeparator();
 		separator_1_1_2.setForeground(new Color(240, 128, 128));
 		separator_1_1_2.setBackground(new Color(240, 128, 128));
-		separator_1_1_2.setBounds(69, 109, 178, 3);
+		separator_1_1_2.setBounds(64, 109, 178, 3);
 		panelPadel.add(separator_1_1_2);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(255, 153, 153), 3, true));
+		panel.setBounds(69, 350, 653, 145);
+		panelPadel.add(panel);
+		panel.setLayout(null);
+		
+		JEditorPane dtrpnLoremIpsumIs = new JEditorPane();
+		dtrpnLoremIpsumIs.setEditable(false);
+		dtrpnLoremIpsumIs.setBounds(5, 5, 643, 135);
+		panel.add(dtrpnLoremIpsumIs);
+		dtrpnLoremIpsumIs.setFont(new Font("Verdana", Font.PLAIN, 15));
+		dtrpnLoremIpsumIs.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.");
+		dtrpnLoremIpsumIs.setBackground(new Color(255, 228, 228));
+		
+		JLabel lblDescripcin_1 = new JLabel("Miembros");
+		lblDescripcin_1.setFont(new Font("Verdana", Font.PLAIN, 20));
+		lblDescripcin_1.setBounds(69, 520, 174, 27);
+		panelPadel.add(lblDescripcin_1);
+		
+		JSeparator separator_1_2 = new JSeparator();
+		separator_1_2.setForeground(new Color(240, 128, 128));
+		separator_1_2.setBackground(new Color(240, 128, 128));
+		separator_1_2.setBounds(64, 548, 268, 3);
+		panelPadel.add(separator_1_2);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		panel_1.setBorder(new LineBorder(new Color(255, 153, 153), 3, true));
+		panel_1.setBounds(69, 567, 653, 155);
+		panelPadel.add(panel_1);
+		
+		table = new JTable();
+		table.setBounds(5, 5, 643, 145);
+		table.setBackground(new Color(255, 228, 228));
+		panel_1.add(table);
 		getContentPane().add(scrollPane);
 		
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controlador.cambioPantalla(12,5);
+				controlador.cambioPantalla(13,5);
 			}
 		});
-		
 		
 	}
 }
