@@ -131,6 +131,7 @@ public class InicioSesion extends JFrame {
 		JButton btnIniciarSesion = new JButton("Iniciar Sesion");
 		btnIniciarSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				modelo.ConexSQL();
 				boolean login = false;
 				login = modelo.comprobarContra(textField.getText(),String.valueOf(passwordField.getPassword())); 
 				if(login == true){

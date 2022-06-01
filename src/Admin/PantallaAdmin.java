@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import MVC.Controlador;
+import MVC.Modelo;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -25,6 +26,7 @@ public class PantallaAdmin extends JFrame {
 	}
 	private JPanel contentPane;
 	private JTextField txtBuscar;
+	private Modelo modelo;
 
 	/**
 	 * Launch the application.
@@ -134,5 +136,10 @@ public class PantallaAdmin extends JFrame {
 		JButton btnBanear_1 = new JButton("Banear");
 		btnBanear_1.setBounds(280, 118, 124, 21);
 		panel_1.add(btnBanear_1);
+	}
+
+	public void setModelo(Modelo modelo) {
+		this.modelo = modelo;
+		
 	}
 }
