@@ -275,7 +275,7 @@ public class EventsWindow extends JFrame{
 		JButton btnNewButton = new JButton("Unirse");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				controlador.cambioPantalla(5,13);
+				controlador.cambioPantalla(5,11);
 			}
 		});
 		btnNewButton.setBounds(35, 249, 117, 29);
@@ -345,7 +345,7 @@ public class EventsWindow extends JFrame{
 		JButton btnNewButton_2 = new JButton("Unirse");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				controlador.cambioPantalla(5,12);
+				controlador.cambioPantalla(5,11);
 			}
 		});
 		btnNewButton_2.setBounds(35, 249, 117, 29);

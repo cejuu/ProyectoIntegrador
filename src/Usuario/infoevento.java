@@ -362,7 +362,7 @@ public class infoevento extends JFrame{
 		
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controlador.cambioPantalla(13,5);
+				controlador.cambioPantalla(11,5);
 			}
 		});
 		
