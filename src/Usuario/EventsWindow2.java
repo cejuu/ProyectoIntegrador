@@ -45,6 +45,7 @@ import javax.swing.JLabel;
 import java.awt.Component;
 import java.sql.*;
 import javax.swing.JTextField;
+import javax.swing.JSeparator;
 public class EventsWindow2 extends JFrame{
 	private Controlador controlador;
 	private Modelo modelo;
@@ -316,6 +317,30 @@ public class EventsWindow2 extends JFrame{
 		textField_3.setColumns(10);
 		textField_3.setBounds(20, 273, 510, 56);
 		panel_1.add(textField_3);
+		
+		JSeparator separator_1_1 = new JSeparator();
+		separator_1_1.setForeground(new Color(240, 128, 128));
+		separator_1_1.setBackground(new Color(240, 128, 128));
+		separator_1_1.setBounds(20, 33, 268, 3);
+		panel_1.add(separator_1_1);
+		
+		JSeparator separator_1_1_1 = new JSeparator();
+		separator_1_1_1.setForeground(new Color(240, 128, 128));
+		separator_1_1_1.setBackground(new Color(240, 128, 128));
+		separator_1_1_1.setBounds(20, 115, 268, 3);
+		panel_1.add(separator_1_1_1);
+		
+		JSeparator separator_1_1_2 = new JSeparator();
+		separator_1_1_2.setForeground(new Color(240, 128, 128));
+		separator_1_1_2.setBackground(new Color(240, 128, 128));
+		separator_1_1_2.setBounds(20, 188, 268, 3);
+		panel_1.add(separator_1_1_2);
+		
+		JSeparator separator_1_1_3 = new JSeparator();
+		separator_1_1_3.setForeground(new Color(240, 128, 128));
+		separator_1_1_3.setBackground(new Color(240, 128, 128));
+		separator_1_1_3.setBounds(20, 260, 268, 3);
+		panel_1.add(separator_1_1_3);
 
 		JLabel lblNewLabel = new JLabel("Torneo P\u00E1del");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
