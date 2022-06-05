@@ -16,6 +16,7 @@ import Usuario.Registro;
 import Usuario.Soporte;
 import Usuario.SportsWindow;
 import Usuario.infoevento;
+import Usuario.Config;
 
 import java.sql.*;
 public class Main {
@@ -25,7 +26,7 @@ public class Main {
 		Modelo modelo = new Modelo();
 		Controlador controlador = new Controlador();
 		
-		
+		Config configuracion = new Config();
 		InicioSesion login = new InicioSesion();
 		Registro register = new Registro();
 		PantallaInicio home = new PantallaInicio();
@@ -59,6 +60,7 @@ public class Main {
 		controlador.setPerfilUsuario(user);
 		controlador.setPantallaAdmin(admin);
 		controlador.setinfoevento(torneo);
+		controlador.setConfiguracion(configuracion);
 		
 		login.setControlador(controlador);
 		register.setControlador(controlador);
@@ -72,6 +74,7 @@ public class Main {
 		user.setControlador(controlador);
 		admin.setControlador(controlador);
 		torneo.setControlador(controlador);
+		configuracion.setControlador(controlador);
 		
 		login.setModelo(modelo);
 		register.setModelo(modelo);
@@ -85,6 +88,7 @@ public class Main {
 		user.setModelo(modelo);
 		admin.setModelo(modelo);
 		torneo.setModelo(modelo);
+		configuracion.setModelo(modelo);
 		
 		JFrame[] pantallas = {
 				login, 
@@ -98,7 +102,8 @@ public class Main {
 				sport, 
 				user, 
 				admin,
-				torneo};
+				torneo,
+				configuracion};
 		controlador.setPantallas(pantallas);
 		
 		login.setVisible(true);

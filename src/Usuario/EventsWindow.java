@@ -82,7 +82,7 @@ public class EventsWindow extends JFrame{
 		setIconImage(
 				Toolkit.getDefaultToolkit().getImage(SportsWindow.class.getResource("/imagenes/Sin_titulo.png")));
 		getContentPane().setBackground(Color.WHITE);
-		setBounds(100, 100, 959, 659);
+		setBounds(100, 100, 959, 661);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		Container contenedor = getContentPane();
 		contenedor.setLayout(null);
@@ -357,20 +357,20 @@ public class EventsWindow extends JFrame{
 		lblNewLabel_3_2.setBounds(6, 6, 173, 147);
 		panel_1_1_1_3_2.add(lblNewLabel_3_2);
 		
-		JButton btnNewButton_3 = new JButton("");
-		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_3.setIcon(new ImageIcon(EventsWindow.class.getResource("/imagenes/add-free-icon-font (4).png")));
-		btnNewButton_3.addActionListener(new ActionListener() {
+		JButton btnAdd = new JButton("");
+		btnAdd.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnAdd.setIcon(new ImageIcon(EventsWindow.class.getResource("/imagenes/add-free-icon-font (4).png")));
+		btnAdd.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				controlador.cambioPantalla(5,6);
 			}
 		});
 
-		btnNewButton_3.setBounds(723, 36, 40, 40);
-		panel.add(btnNewButton_3);
-		btnNewButton_3.setBackground(new Color(0, 0, 0, 0));
-		btnNewButton_3.setOpaque(false);
+		btnAdd.setBounds(723, 36, 40, 40);
+		panel.add(btnAdd);
+		btnAdd.setBackground(new Color(0, 0, 0, 0));
+		btnAdd.setOpaque(false);
 		
 		textField.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {

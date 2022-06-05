@@ -78,36 +78,36 @@ public class InicioSesion extends JFrame {
 		panel.add(lblNewLabel_4);
 		
 		textField = new JTextField();
-		textField.setBounds(10, 206, 280, 19);
+		textField.setBounds(10, 239, 280, 19);
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(10, 225, 280, 14);
+		separator.setBounds(10, 258, 280, 14);
 		getContentPane().add(separator);
 		
 		JLabel lblNewLabel = new JLabel("Usuario");
 		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 14));
-		lblNewLabel.setBounds(10, 175, 169, 21);
+		lblNewLabel.setBounds(10, 208, 169, 21);
 		getContentPane().add(lblNewLabel);
 		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a");
 		lblContrasea.setFont(new Font("Verdana", Font.PLAIN, 14));
-		lblContrasea.setBounds(10, 249, 169, 21);
+		lblContrasea.setBounds(10, 282, 169, 21);
 		getContentPane().add(lblContrasea);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(10, 280, 280, 19);
+		passwordField.setBounds(10, 313, 280, 19);
 		getContentPane().add(passwordField);
 		
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(10, 299, 280, 14);
+		separator_1.setBounds(10, 332, 280, 14);
 		getContentPane().add(separator_1);
 		
 		JLabel lblNewLabel_1 = new JLabel("Inciar Sesion");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 15));
-		lblNewLabel_1.setBounds(75, 126, 158, 32);
+		lblNewLabel_1.setBounds(75, 159, 158, 32);
 		
 		getContentPane().add(lblNewLabel_1);
 		
@@ -120,12 +120,12 @@ public class InicioSesion extends JFrame {
 		});
 		btnNewButton.setForeground(Color.DARK_GRAY);
 		btnNewButton.setBackground(new Color(255, 102, 102));
-		btnNewButton.setBounds(50, 383, 205, 32);
+		btnNewButton.setBounds(50, 416, 205, 32);
 		getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setIcon(new ImageIcon(InicioSesion.class.getResource("/imagenes/Sin_titulo.png")));
-		lblNewLabel_2.setBounds(67, 33, 180, 100);
+		lblNewLabel_2.setBounds(67, 66, 180, 100);
 		getContentPane().add(lblNewLabel_2);
 		
 		JButton btnIniciarSesion = new JButton("Iniciar Sesion");
@@ -142,14 +142,26 @@ public class InicioSesion extends JFrame {
 		btnIniciarSesion.setFont(new Font("Verdana", Font.PLAIN, 13));
 		btnIniciarSesion.setForeground(Color.DARK_GRAY);
 		btnIniciarSesion.setBackground(new Color(255, 102, 102));
-		btnIniciarSesion.setBounds(50, 328, 205, 32);
+		btnIniciarSesion.setBounds(50, 361, 205, 32);
 		getContentPane().add(btnIniciarSesion);
 		
 		lblNewLabel_3 = new JLabel("Usuario ó contraseña incorrectos");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setForeground(new Color(255, 153, 153));
-		lblNewLabel_3.setBounds(50, 345, 209, 16);
+		lblNewLabel_3.setBounds(50, 378, 209, 16);
 		getContentPane().add(lblNewLabel_3);
+		
+		JButton btnOptions = new JButton("");
+		btnOptions.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.cambioPantalla(0,12);
+			}
+		});
+		btnOptions.setBackground(new Color(0, 0, 0, 0));
+		btnOptions.setOpaque(false);
+		btnOptions.setIcon(new ImageIcon(InicioSesion.class.getResource("/imagenes/options-icon.png")));
+		btnOptions.setBounds(292, 10, 40, 40);
+		getContentPane().add(btnOptions);
 		setBackground(Color.WHITE);
 		setBounds(100, 100, 1166, 643);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

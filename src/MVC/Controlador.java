@@ -13,6 +13,7 @@ import Usuario.Registro;
 import Usuario.Soporte;
 import Usuario.SportsWindow;
 import Usuario.infoevento;
+import Usuario.Config;
 
 public class Controlador{
 		private Modelo modelo;
@@ -29,6 +30,7 @@ public class Controlador{
 		private PerfilUsuario PerfilUsuario;
 		private PantallaAdmin PantallaAdmin;
 		private infoevento infoevento;
+		private Config configuracion;
 		
 		public void setModelo(Modelo modelo) {
 			this.modelo = modelo;
@@ -73,6 +75,9 @@ public class Controlador{
 			infoevento = infoevento;
 			
 		}
+		public void setConfiguracion(Config configuracion) {
+			configuracion = configuracion;
+		}
 		
 		JFrame[] pantallas = {
 				InicioSesion, 
@@ -86,7 +91,8 @@ public class Controlador{
 				SportsWindow, 
 				PerfilUsuario, 
 				PantallaAdmin,
-				infoevento};
+				infoevento,
+				configuracion};
 		
 		public void cambioPantalla(int p1, int p2) {
 			pantallas[p1].setVisible(false);
@@ -98,7 +104,6 @@ public class Controlador{
 				this.pantallas[i] = pantallas[i];
 			}
 		}
-		
 		
 }
 
