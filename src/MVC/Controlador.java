@@ -8,13 +8,11 @@ import Usuario.InicioSesion;
 import Usuario.PantallaInicio;
 import Usuario.PantallaInicioFriends;
 import Usuario.PantallaInicioUsuario;
-import Usuario.PartidoFutbol;
-import Usuario.PartidoTenis;
 import Usuario.PerfilUsuario;
 import Usuario.Registro;
 import Usuario.Soporte;
 import Usuario.SportsWindow;
-import Usuario.TorneoPadel;
+import Usuario.infoevento;
 
 public class Controlador{
 		private Modelo modelo;
@@ -30,9 +28,7 @@ public class Controlador{
 		private SportsWindow SportsWindow;
 		private PerfilUsuario PerfilUsuario;
 		private PantallaAdmin PantallaAdmin;
-		private TorneoPadel TorneoPadel;
-		private PartidoTenis PartidoTenis;
-		private PartidoFutbol PartidoFutbol;
+		private infoevento infoevento;
 		
 		public void setModelo(Modelo modelo) {
 			this.modelo = modelo;
@@ -73,15 +69,11 @@ public class Controlador{
 		public void setPantallaAdmin(PantallaAdmin pantallaAdmin) {
 			PantallaAdmin = pantallaAdmin;
 		}
-		public void setTorneoPadel(TorneoPadel torneoPadel) {
-			TorneoPadel = torneoPadel;
+		public void setinfoevento(infoevento torneo) {
+			infoevento = infoevento;
+			
 		}
-		public void setPartidoTenis(PartidoTenis partidoTenis) {
-			PartidoTenis = partidoTenis;
-		}
-		public void setPartidoFutbol(PartidoFutbol partidoFutbol) {
-			PartidoFutbol = partidoFutbol;
-		}
+		
 		JFrame[] pantallas = {
 				InicioSesion, 
 				Registro, 
@@ -94,9 +86,7 @@ public class Controlador{
 				SportsWindow, 
 				PerfilUsuario, 
 				PantallaAdmin,
-				PartidoFutbol,
-				PartidoTenis,
-				TorneoPadel};
+				infoevento};
 		
 		public void cambioPantalla(int p1, int p2) {
 			pantallas[p1].setVisible(false);
@@ -108,6 +98,7 @@ public class Controlador{
 				this.pantallas[i] = pantallas[i];
 			}
 		}
+		
 		
 }
 

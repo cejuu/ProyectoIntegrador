@@ -11,13 +11,11 @@ import Usuario.InicioSesion;
 import Usuario.PantallaInicio;
 import Usuario.PantallaInicioFriends;
 import Usuario.PantallaInicioUsuario;
-import Usuario.PartidoFutbol;
-import Usuario.PartidoTenis;
 import Usuario.PerfilUsuario;
 import Usuario.Registro;
 import Usuario.Soporte;
 import Usuario.SportsWindow;
-import Usuario.TorneoPadel;
+import Usuario.infoevento;
 
 import java.sql.*;
 public class Main {
@@ -39,9 +37,7 @@ public class Main {
 		SportsWindow sport = new SportsWindow();
 		PerfilUsuario user = new PerfilUsuario();
 		PantallaAdmin admin = new PantallaAdmin();
-		TorneoPadel torneo = new TorneoPadel();
-		PartidoTenis partidoTenis = new PartidoTenis();
-		PartidoFutbol partidoFutbol = new PartidoFutbol();
+		infoevento torneo = new infoevento();
 		
 		
 		modelo.setVista(vista);
@@ -62,9 +58,7 @@ public class Main {
 		controlador.setSportsWindow(sport);
 		controlador.setPerfilUsuario(user);
 		controlador.setPantallaAdmin(admin);
-		controlador.setPartidoFutbol(partidoFutbol);
-		controlador.setPartidoTenis(partidoTenis);
-		controlador.setTorneoPadel(torneo);
+		controlador.setinfoevento(torneo);
 		
 		login.setControlador(controlador);
 		register.setControlador(controlador);
@@ -77,8 +71,6 @@ public class Main {
 		sport.setControlador(controlador);
 		user.setControlador(controlador);
 		admin.setControlador(controlador);
-		partidoFutbol.setControlador(controlador);
-		partidoTenis.setControlador(controlador);
 		torneo.setControlador(controlador);
 		
 		login.setModelo(modelo);
@@ -92,8 +84,6 @@ public class Main {
 		sport.setModelo(modelo);
 		user.setModelo(modelo);
 		admin.setModelo(modelo);
-		partidoFutbol.setModelo(modelo);
-		partidoTenis.setModelo(modelo);
 		torneo.setModelo(modelo);
 		
 		JFrame[] pantallas = {
@@ -108,8 +98,6 @@ public class Main {
 				sport, 
 				user, 
 				admin,
-				partidoFutbol,
-				partidoTenis,
 				torneo};
 		controlador.setPantallas(pantallas);
 		
