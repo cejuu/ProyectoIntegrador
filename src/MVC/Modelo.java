@@ -1,6 +1,8 @@
 package MVC;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.*;
@@ -50,7 +52,7 @@ public class Modelo {
 	private InputStream entrada;
 	private OutputStream salida;
 	private String respuesta;
-	
+	private final String ficheroConf = "bbdd.ini";
 	
 	
 	
@@ -91,6 +93,26 @@ public class Modelo {
 	}
 	
 	public Modelo() {
+		propconfig = new Properties();
+		try {
+			
+			fichero = new File(ficheroConf);
+			if (fichero.exists()) {
+				
+				entrada = new FileInputStream(fichero);
+				propconfig.load(entrada);
+				
+			} else {
+				
+				System.err.println("No encontrado");
+				
+			}
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
 		try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conexion = DriverManager.getConnection(url, login, pwd);

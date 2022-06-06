@@ -111,7 +111,7 @@ public class Controlador{
 					((Config) pantallas[12]).getTxtContrasena().getText()
 					
 			};
-			modelo.guardar(datosConexion,((Config) pantallas[12])).getKeys();
+			modelo.guardar(datosConexion,((Config) pantallas[12]).getKeys());
 			
 		}
 		
