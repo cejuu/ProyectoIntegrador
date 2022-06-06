@@ -321,25 +321,25 @@ public class EventsWindow2 extends JFrame{
 		JSeparator separator_1_1 = new JSeparator();
 		separator_1_1.setForeground(new Color(240, 128, 128));
 		separator_1_1.setBackground(new Color(240, 128, 128));
-		separator_1_1.setBounds(20, 33, 268, 3);
+		separator_1_1.setBounds(20, 33, 510, 3);
 		panel_1.add(separator_1_1);
 		
 		JSeparator separator_1_1_1 = new JSeparator();
 		separator_1_1_1.setForeground(new Color(240, 128, 128));
 		separator_1_1_1.setBackground(new Color(240, 128, 128));
-		separator_1_1_1.setBounds(20, 115, 268, 3);
+		separator_1_1_1.setBounds(20, 115, 510, 3);
 		panel_1.add(separator_1_1_1);
 		
 		JSeparator separator_1_1_2 = new JSeparator();
 		separator_1_1_2.setForeground(new Color(240, 128, 128));
 		separator_1_1_2.setBackground(new Color(240, 128, 128));
-		separator_1_1_2.setBounds(20, 188, 268, 3);
+		separator_1_1_2.setBounds(20, 188, 510, 3);
 		panel_1.add(separator_1_1_2);
 		
 		JSeparator separator_1_1_3 = new JSeparator();
 		separator_1_1_3.setForeground(new Color(240, 128, 128));
 		separator_1_1_3.setBackground(new Color(240, 128, 128));
-		separator_1_1_3.setBounds(20, 260, 268, 3);
+		separator_1_1_3.setBounds(20, 260, 510, 3);
 		panel_1.add(separator_1_1_3);
 
 		JLabel lblNewLabel = new JLabel("Torneo P\u00E1del");
