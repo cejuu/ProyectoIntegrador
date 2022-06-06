@@ -104,6 +104,16 @@ public class Controlador{
 				this.pantallas[i] = pantallas[i];
 			}
 		}
+		public void guardar() {
+			String[] datosConexion = {
+					((Config) pantallas[12]).getTxtUsuario().getText(),
+					((Config) pantallas[12]).getTxtNombreBbdd().getText(),
+					((Config) pantallas[12]).getTxtContrasena().getText()
+					
+			};
+			modelo.guardar(datosConexion,((Config) pantallas[12])).getKeys();
+			
+		}
 		
 }
 

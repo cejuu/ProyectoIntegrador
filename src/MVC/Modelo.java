@@ -1,6 +1,7 @@
 package MVC;
 import java.io.File;
 import java.sql.*;
+import java.util.Properties;
 
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -41,6 +42,7 @@ public class Modelo {
 	private Registro register;
 	private Soporte support;
 	private SportsWindow sports;
+	private Properties propconfig;
 	
 	
 	
@@ -211,5 +213,28 @@ public class Modelo {
 
 	public void setSports(SportsWindow sports) {
 		this.sports = sports;
+	}
+
+	public Properties getPropconfig() {
+		return propconfig;
+	}
+
+	public void setPropconfig(Properties propconfig) {
+		this.propconfig = propconfig;
+	}
+	
+	public void guardar(String[] datosConexion, String[] keys) {
+		try {
+			
+			for(int i = 0; i < keys.length; i++) {
+				config.setProperty(keys[i], datosConexion[i]);
+				salida = new FileOutputStream(miFichero);
+				config.store(salida, "Guardado");
+				respuesta = "Guardado";
+			}
+			
+		}catch(Exception e){
+			
+		}
 	}
 }

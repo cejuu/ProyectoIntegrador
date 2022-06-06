@@ -63,6 +63,8 @@ public class Config extends JFrame{
 	public JTextField txtfContrasena;
 	public JTextField txtfPuerto;
 	public JTextField textField_5;
+	public String[] keys = {"bd", "login", "pwd"};
+	
 	public void setControlador(Controlador controlador) {
 		this.controlador = controlador;
 	}
@@ -186,6 +188,8 @@ public class Config extends JFrame{
 		JButton btnGuardar = new JButton("Guardar");
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				controlador.guardar();
+				
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -238,12 +242,24 @@ public class Config extends JFrame{
 		if(seleccion==JFileChooser.APPROVE_OPTION){
 		    File fichero=fc.getSelectedFile();
 		    textField_5.setText(fichero.getAbsolutePath());
-		    txtfUsuario.setText(fichero.getAbsolutePath());
+		    txtfUsuario.setText(modelo.getPropconfig().getProperty("login"));
 		    txtfNombBbdd.setText(fichero.getAbsolutePath());
 		    txtfContrasena.setText(fichero.getAbsolutePath());
 		    txtfPuerto.setText(fichero.getAbsolutePath());
 		}
 	}
+	public JTextField getTxtUsuario() {
+		return txtfUsuario;
+	}
+	public JTextField getTxtNombreBbdd() {
+		return txtfNombBbdd;
+	}
+	public JTextField getTxtContrasena() {
+		return txtfContrasena;
+	}
+	public String[] getKeys() {
+        return keys;
+    }
 	
 	
 }
