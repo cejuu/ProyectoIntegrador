@@ -60,7 +60,7 @@ public class Config extends JFrame{
 	private Modelo modelo;
 	private JTextField txtfUsuario;
 	private JTextField txtfNombBbdd;
-	private JTextField txtfContraseña;
+	private JTextField txtfContrasena;
 	private JTextField txtfPuerto;
 	private JTextField textField_5;
 	public void setControlador(Controlador controlador) {
@@ -151,12 +151,12 @@ public class Config extends JFrame{
 		txtfNombBbdd.setBounds(344, 235, 185, 26);
 		getContentPane().add(txtfNombBbdd);
 		
-		txtfContraseña = new JTextField();
-		txtfContraseña.setEditable(false);
-		txtfContraseña.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		txtfContraseña.setColumns(10);
-		txtfContraseña.setBounds(344, 283, 185, 26);
-		getContentPane().add(txtfContraseña);
+		txtfContrasena = new JTextField();
+		txtfContrasena.setEditable(false);
+		txtfContrasena.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtfContrasena.setColumns(10);
+		txtfContrasena.setBounds(344, 283, 185, 26);
+		getContentPane().add(txtfContrasena);
 		
 		txtfPuerto = new JTextField();
 		txtfPuerto.setEditable(false);
@@ -200,13 +200,13 @@ public class Config extends JFrame{
 					btnEditar.setText("Cancelar");
 					txtfUsuario.setEditable(true);
 					txtfNombBbdd.setEditable(true);
-					txtfContraseña.setEditable(true);
+					txtfContrasena.setEditable(true);
 					txtfPuerto.setEditable(true);
 				}else {
 					btnEditar.setText("Editar");
 					txtfUsuario.setEditable(false);
 					txtfNombBbdd.setEditable(false);
-					txtfContraseña.setEditable(false);
+					txtfContrasena.setEditable(false);
 					txtfPuerto.setEditable(false);
 				}
 			}
@@ -241,7 +241,7 @@ public class Config extends JFrame{
 		    textField_5.setText(fichero.getAbsolutePath());
 		    txtfUsuario.setText(fichero.getAbsolutePath());
 		    txtfNombBbdd.setText(fichero.getAbsolutePath());
-		    txtfContraseña.setText(fichero.getAbsolutePath());
+		    txtfContrasena.setText(fichero.getAbsolutePath());
 		    txtfPuerto.setText(fichero.getAbsolutePath());
 		}
 	}
