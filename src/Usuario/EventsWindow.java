@@ -269,7 +269,7 @@ public class EventsWindow extends JFrame{
 		JLabel lblNewLabel_2 = new JLabel("V 16 Abril | 4 Jugadores");
 		lblNewLabel_2.setBounds(18, 221, 161, 16);
 		panel_1_1_1_3.add(lblNewLabel_2);
-		lblNewLabel_2.setText("V 16 Abril | "+modelo.getPlayers("Prueba evento"));
+		//lblNewLabel_2.setText("V 16 Abril | "+modelo.getPlayers("Prueba evento"));
 
 
 		JButton btnNewButton = new JButton("Unirse");
@@ -308,7 +308,7 @@ public class EventsWindow extends JFrame{
 		JLabel lblNewLabel_2_1 = new JLabel("J 15 Abril | 22 Jugadores");
 		lblNewLabel_2_1.setBounds(18, 221, 161, 16);
 		panel_1_1_1_3_1.add(lblNewLabel_2_1);
-		lblNewLabel_2_1.setText("J 15 Abril | "+modelo.getPlayers("Prueba evento"));
+		//lblNewLabel_2_1.setText("J 15 Abril | "+modelo.getPlayers("Prueba evento"));
 
 		JButton btnNewButton_1 = new JButton("Unirse");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -340,7 +340,7 @@ public class EventsWindow extends JFrame{
 		JLabel lblNewLabel_2_2 = new JLabel("S 17 Abril | 2 Jugadores");
 		lblNewLabel_2_2.setBounds(18, 221, 161, 16);
 		panel_1_1_1_3_2.add(lblNewLabel_2_2);
-		lblNewLabel_2_2.setText("S 17 Abril | "+modelo.getPlayers("Prueba evento"));
+		//lblNewLabel_2_2.setText("S 17 Abril | "+modelo.getPlayers("Prueba evento"));
 
 		JButton btnNewButton_2 = new JButton("Unirse");
 		btnNewButton_2.addActionListener(new ActionListener() {

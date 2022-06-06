@@ -113,28 +113,13 @@ public class Modelo {
 		}
 		
 		
-		try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conexion = DriverManager.getConnection(url, login, pwd);
-            System.out.println(" - Conexion con MySQL establecida -");
-//            if (conexion != null) {
-            // System.out.println("Conexion a la bd" + url + "...ok!!!");
-        } catch (ClassNotFoundException cnfe) {
-            System.out.println("Driver JDBC no encontrado");
-            cnfe.printStackTrace();
-        } catch (SQLException sqle) {
-            System.out.println("Error al conectarte a la DB");
-            sqle.printStackTrace();
-        } catch (Exception e) {
-            System.out.println("- Error de Conexion con MySQL -");
-            e.printStackTrace();
-        }
+		
     }
 	
 	public void ConexSQL() {
 		try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conexion = DriverManager.getConnection(url, login, pwd);
+            conexion = DriverManager.getConnection(propconfig.getProperty("bd"), propconfig.getProperty("login"), propconfig.getProperty("pwd"));
             System.out.println(" - Conexion con MySQL establecida -");
 //            if (conexion != null) {
             // System.out.println("Conexion a la bd" + url + "...ok!!!");
@@ -176,20 +161,20 @@ public class Modelo {
 		}
 	}
 	
-	public int getPlayers(String NameEvent) {
-		int players = 0;
-		ResultSet resultado = null;
-		try {
-			PreparedStatement pstmt = conexion.prepareStatement("SELECT Players FROM Events WHERE EventName = ?");
-			pstmt.setInt(1, 2);
-			resultado = pstmt.executeQuery();
-			players = resultado.getInt(2);
-			pstmt.close();
-		} catch (SQLException e) {
-			System.err.println(e.getMessage());
-		}
-		return players;
-	}
+	//public int getPlayers(String NameEvent) {
+		//int players = 0;
+		//ResultSet resultado = null;
+		//try {
+			//PreparedStatement pstmt = conexion.prepareStatement("SELECT Players FROM Events WHERE EventName = ?");
+			//pstmt.setInt(1, 2);
+			//resultado = pstmt.executeQuery();
+			//players = resultado.getInt(2);
+			//pstmt.close();
+		//} catch (SQLException e) {
+			//System.err.println(e.getMessage());
+		//}
+		//return players;
+	//}
 	
 	
 

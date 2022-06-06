@@ -77,7 +77,9 @@ public class Config extends JFrame{
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
 		EventQueue.invokeLater(new Runnable() {
+			
 			public void run() {
 				try {
 					Config window = new Config();
@@ -233,21 +235,11 @@ public class Config extends JFrame{
 		});
 	}
 	public void seleccionaFichero () {
-		File rutaProyecto = new File (System.getProperty("user.dir"));
-		JFileChooser fc=new JFileChooser(rutaProyecto);
-		fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-		FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.ini", "ini");
-		fc.setFileFilter(filtro);
-		int seleccion=fc.showOpenDialog(getContentPane());
-		if(seleccion==JFileChooser.APPROVE_OPTION){
-		    File fichero=fc.getSelectedFile();
-		    textField_5.setText(fichero.getAbsolutePath());
-		    txtfUsuario.setText(modelo.getPropconfig().getProperty("login"));
-		    txtfNombBbdd.setText(fichero.getAbsolutePath());
-		    txtfContrasena.setText(fichero.getAbsolutePath());
-		    txtfPuerto.setText(fichero.getAbsolutePath());
+		txtfUsuario.setText(modelo.getPropconfig().getProperty("login"));
+	    txtfNombBbdd.setText(modelo.getPropconfig().getProperty("bd"));
+	    txtfContrasena.setText(modelo.getPropconfig().getProperty("pwd"));  
 		}
-	}
+	
 	public JTextField getTxtUsuario() {
 		return txtfUsuario;
 	}
