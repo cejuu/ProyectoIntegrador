@@ -50,6 +50,30 @@ public class Modelo {
 	private String usr= "";
 	private String pass= "";
 	private String rol= "";
+	
+	public void setPwdBBDD(String usuario) {
+		this.pwd=usuario;
+	}
+	
+	public String getPwdBBDD() {
+		return this.pwd;
+	}
+	public void setUsrBBDD(String usuario) {
+		this.login=usuario;
+	}
+	
+	public String getUsrBBDD() {
+		return this.login;
+	}
+	
+	public void setNameBBDD(String usuario) {
+		this.bd=usuario;
+	}
+	
+	public String getNameBBDD() {
+		return this.bd;
+	}
+	
 
 	
 	public void setVista(Vista vista) {
@@ -135,22 +159,7 @@ public class Modelo {
 		return players;
 	}
 	
-	public void seleccionaFichero () {
-		File rutaProyecto = new File (System.getProperty("user.dir"));
-		JFileChooser fc=new JFileChooser(rutaProyecto);
-		fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-		FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.ini", "ini");
-		fc.setFileFilter(filtro);
-		int seleccion=fc.showOpenDialog(Config.getContentPane());
-		if(seleccion==JFileChooser.APPROVE_OPTION){
-		    File fichero=fc.getSelectedFile();
-		    Config.textField_5.setText(fichero.getAbsolutePath());
-		    Config.txtfUsuario.setText(fichero.getAbsolutePath());
-		    Config.txtfNombBbdd.setText(fichero.getAbsolutePath());
-		    Config.txtfContrasena.setText(fichero.getAbsolutePath());
-		    Config.txtfPuerto.setText(fichero.getAbsolutePath());
-		}
-	}
+	
 
 	public void setAdmin(PantallaAdmin admin) {
 		this.admin = admin;

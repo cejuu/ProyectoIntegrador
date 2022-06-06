@@ -168,7 +168,7 @@ public class Config extends JFrame{
 		JButton btnSeleccionar = new JButton("Selecciona");
 		btnSeleccionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				modelo.seleccionaFichero();
+				seleccionaFichero();
 			}
 		});
 		btnSeleccionar.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -227,6 +227,22 @@ public class Config extends JFrame{
 				controlador.cambioPantalla(12,0);
 			}
 		});
+	}
+	public void seleccionaFichero () {
+		File rutaProyecto = new File (System.getProperty("user.dir"));
+		JFileChooser fc=new JFileChooser(rutaProyecto);
+		fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+		FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.ini", "ini");
+		fc.setFileFilter(filtro);
+		int seleccion=fc.showOpenDialog(getContentPane());
+		if(seleccion==JFileChooser.APPROVE_OPTION){
+		    File fichero=fc.getSelectedFile();
+		    textField_5.setText(fichero.getAbsolutePath());
+		    txtfUsuario.setText(fichero.getAbsolutePath());
+		    txtfNombBbdd.setText(fichero.getAbsolutePath());
+		    txtfContrasena.setText(fichero.getAbsolutePath());
+		    txtfPuerto.setText(fichero.getAbsolutePath());
+		}
 	}
 	
 	
