@@ -45,10 +45,12 @@ import javax.swing.JLabel;
 import java.awt.Component;
 import java.sql.*;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 public class EventsWindow2 extends JFrame{
 	private Controlador controlador;
 	private Modelo modelo;
 	private JTable table;
+	private 
 	public void setModelo(Modelo modelo) {
 		this.modelo = modelo;
 		
@@ -284,7 +286,22 @@ public class EventsWindow2 extends JFrame{
 		panel.add(panel_1_1);
 		
 		table = new JTable();
-		table.setBackground(new Color(255, 228, 228));
+		table.setForeground(new Color(254, 254, 254));
+		table.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"New column", "New column", "New column", "New column", "New column"
+			}
+		));
+		table.setBackground(new Color(255, 228, 225));
 		table.setBounds(4, 4, 694, 310);
 		panel_1_1.add(table);
 		
