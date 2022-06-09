@@ -44,15 +44,11 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.JLabel;
 import java.awt.Component;
 import java.sql.*;
-import javax.swing.JTextField;
-import javax.swing.JSeparator;
+import javax.swing.JTable;
 public class EventsWindow2 extends JFrame{
 	private Controlador controlador;
 	private Modelo modelo;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTable table;
 	public void setModelo(Modelo modelo) {
 		this.modelo = modelo;
 		
@@ -210,6 +206,14 @@ public class EventsWindow2 extends JFrame{
 		panel.setLayout(null);
 		panel.setPreferredSize(new Dimension(730, 1300));
 
+		TextField textField = new TextField();
+		textField.setFont(new Font("Dialog", Font.PLAIN, 18));
+		textField.setEditable(false);
+		textField.setText("Buscar\r\n");
+		textField.setBackground(Color.LIGHT_GRAY);
+		textField.setBounds(130, 100, 522, 33);
+		panel.add(textField);
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(153, 54, 792, 568);
 		getContentPane().add(scrollPane);
@@ -252,100 +256,10 @@ public class EventsWindow2 extends JFrame{
 		panel_1_2_1_1_1.setBounds(545, 1065, 185, 200);
 		panel.add(panel_1_2_1_1_1);
 
-		JPanel panel_1_1_1_3 = new JPanel();
-		panel_1_1_1_3.setLayout(null);
-		panel_1_1_1_3.setBorder(new LineBorder(new Color(255, 153, 153), 4, true));
-		panel_1_1_1_3.setBackground(Color.WHITE);
-		panel_1_1_1_3.setBounds(61, 160, 591, 390);
-		panel.add(panel_1_1_1_3);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(10, 10, 571, 370);
-		panel_1_1_1_3.add(panel_1);
-		panel_1.setLayout(null);
-		
-		JLabel lblNewLabel_1 = new JLabel("Ubicaci\u00F3n");
-		lblNewLabel_1.setBackground(Color.WHITE);
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_1.setBounds(20, 10, 115, 25);
-		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 14));
-		panel_1.add(lblNewLabel_1);
-		
-		textField = new JTextField();
-		textField.setBounds(20, 45, 510, 25);
-		panel_1.add(textField);
-		textField.setColumns(10);
-		
-		JButton btnNewButton = new JButton("Salir del evento");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 14));
-		btnNewButton.setBounds(221, 339, 155, 21);
-		panel_1.add(btnNewButton);
-		
-		JLabel lblNewLabel_1_1 = new JLabel("N\u00BA Personas");
-		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_1_1.setFont(new Font("Verdana", Font.PLAIN, 14));
-		lblNewLabel_1_1.setBounds(20, 93, 115, 25);
-		panel_1.add(lblNewLabel_1_1);
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(20, 128, 510, 25);
-		panel_1.add(textField_1);
-		
-		JLabel lblNewLabel_1_1_1 = new JLabel("Hora");
-		lblNewLabel_1_1_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_1_1_1.setFont(new Font("Verdana", Font.PLAIN, 14));
-		lblNewLabel_1_1_1.setBounds(20, 166, 115, 25);
-		panel_1.add(lblNewLabel_1_1_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(20, 201, 510, 25);
-		panel_1.add(textField_2);
-		
-		JLabel lblNewLabel_1_1_1_1 = new JLabel("Descripci\u00F3n");
-		lblNewLabel_1_1_1_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_1_1_1_1.setFont(new Font("Verdana", Font.PLAIN, 14));
-		lblNewLabel_1_1_1_1.setBounds(20, 238, 115, 25);
-		panel_1.add(lblNewLabel_1_1_1_1);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(20, 273, 510, 56);
-		panel_1.add(textField_3);
-		
-		JSeparator separator_1_1 = new JSeparator();
-		separator_1_1.setForeground(new Color(240, 128, 128));
-		separator_1_1.setBackground(new Color(240, 128, 128));
-		separator_1_1.setBounds(20, 33, 510, 3);
-		panel_1.add(separator_1_1);
-		
-		JSeparator separator_1_1_1 = new JSeparator();
-		separator_1_1_1.setForeground(new Color(240, 128, 128));
-		separator_1_1_1.setBackground(new Color(240, 128, 128));
-		separator_1_1_1.setBounds(20, 115, 510, 3);
-		panel_1.add(separator_1_1_1);
-		
-		JSeparator separator_1_1_2 = new JSeparator();
-		separator_1_1_2.setForeground(new Color(240, 128, 128));
-		separator_1_1_2.setBackground(new Color(240, 128, 128));
-		separator_1_1_2.setBounds(20, 188, 510, 3);
-		panel_1.add(separator_1_1_2);
-		
-		JSeparator separator_1_1_3 = new JSeparator();
-		separator_1_1_3.setForeground(new Color(240, 128, 128));
-		separator_1_1_3.setBackground(new Color(240, 128, 128));
-		separator_1_1_3.setBounds(20, 260, 510, 3);
-		panel_1.add(separator_1_1_3);
-
-		JLabel lblNewLabel = new JLabel("Torneo P\u00E1del");
+		JLabel lblNewLabel = new JLabel("PROXIMOS EVENTOS");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 34));
-		lblNewLabel.setBounds(181, 36, 381, 62);
+		lblNewLabel.setBounds(203, 32, 381, 62);
 		panel.add(lblNewLabel);
 		
 		JButton btnAdd = new JButton("");
@@ -362,6 +276,26 @@ public class EventsWindow2 extends JFrame{
 		panel.add(btnAdd);
 		btnAdd.setBackground(new Color(0, 0, 0, 0));
 		btnAdd.setOpaque(false);
+		
+		JPanel panel_1_1 = new JPanel();
+		panel_1_1.setLayout(null);
+		panel_1_1.setBorder(new LineBorder(new Color(255, 153, 153), 3, true));
+		panel_1_1.setBounds(46, 195, 702, 318);
+		panel.add(panel_1_1);
+		
+		table = new JTable();
+		table.setBackground(new Color(255, 228, 228));
+		table.setBounds(4, 4, 694, 310);
+		panel_1_1.add(table);
+		
+		textField.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				if(textField.getText().equals("Buscar ")) {
+					textField.setText("");
+				}
+				textField.setEditable(true);
+			}
+		});
 
 		scrollPane.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
@@ -379,3 +313,4 @@ public class EventsWindow2 extends JFrame{
 		this.controlador = controlador;
 	}
 }
+
