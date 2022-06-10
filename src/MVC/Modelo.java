@@ -339,7 +339,7 @@ public class Modelo {
 	public void guardarTablaEventos() {
 		File rutaTablaEV = new File(System.getProperty("user.dir"));
 		JFileChooser file = new JFileChooser(rutaTablaEV);
-		int selecionados = file.showSaveDialog(events2.getScrollPane());
+		int selecionados = file.showSaveDialog(events2.getContentPane());
 		if (selecionados == JFileChooser.APPROVE_OPTION) {
 			File fch = file.getSelectedFile();
 		
@@ -361,7 +361,7 @@ public class Modelo {
 	public void cargarTabla() {
 			File rutaTablaEV = new File(System.getProperty("user.dir"));
 			JFileChooser file = new JFileChooser(rutaTablaEV);
-			int selecionados = file.showSaveDialog(events2.getScrollPane());
+			int selecionados = file.showSaveDialog(events2.getContentPane());
 			if(selecionados == JFileChooser.APPROVE_OPTION){
 				
 			try {
