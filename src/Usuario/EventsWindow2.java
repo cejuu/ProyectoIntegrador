@@ -50,7 +50,6 @@ public class EventsWindow2 extends JFrame{
 	private Controlador controlador;
 	private Modelo modelo;
 	private JTable table;
-	private 
 	public void setModelo(Modelo modelo) {
 		this.modelo = modelo;
 		
