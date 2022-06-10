@@ -48,6 +48,7 @@ import javax.swing.JLabel;
 import java.awt.Component;
 import java.sql.*;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import java.awt.FlowLayout;
 public class EventsWindow2 extends JFrame{
@@ -165,7 +166,7 @@ public class EventsWindow2 extends JFrame{
 
 		dsktpMisEventos.setBorder(new LineBorder(new Color(255, 0, 0), 2, true));
 		dsktpMisEventos.setBackground(new Color(255, 204, 204));
-		dsktpMisEventos.setBounds(-21, 213, 175, 409);
+		dsktpMisEventos.setBounds(-21, 213, 175, 411);
 		getContentPane().add(dsktpMisEventos);
 
 		JLabel lblNewLabel_1_3 = new JLabel("Eventos Apuntados");
@@ -209,7 +210,7 @@ public class EventsWindow2 extends JFrame{
 		panel.setBackground(new Color(255, 248, 248));
 		panel.setBounds(153, 53, 760, 510);
 		panel.setLayout(null);
-		panel.setPreferredSize(new Dimension(730, 1300));
+		panel.setPreferredSize(new Dimension(730, 700));
 
 		TextField textField = new TextField();
 		textField.setFont(new Font("Dialog", Font.PLAIN, 18));
@@ -220,46 +221,10 @@ public class EventsWindow2 extends JFrame{
 		panel.add(textField);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(153, 54, 792, 568);
+		scrollPane.setBounds(153, 54, 792, 570);
 		getContentPane().add(scrollPane);
-		scrollPane.setColumnHeaderView(panel);
+		scrollPane.setViewportView(panel);
 		scrollPane.getVerticalScrollBar().setUnitIncrement(10);
-
-		JPanel panel_1_4 = new JPanel();
-		panel_1_4.setBounds(61, 575, 185, 200);
-		panel.add(panel_1_4);
-
-		JPanel panel_1_1_2 = new JPanel();
-		panel_1_1_2.setBounds(305, 575, 185, 200);
-		panel.add(panel_1_1_2);
-
-		JPanel panel_1_2_2 = new JPanel();
-		panel_1_2_2.setBounds(545, 575, 185, 200);
-		panel.add(panel_1_2_2);
-
-		JPanel panel_1_3_1 = new JPanel();
-		panel_1_3_1.setBounds(61, 820, 185, 200);
-		panel.add(panel_1_3_1);
-
-		JPanel panel_1_1_1_1 = new JPanel();
-		panel_1_1_1_1.setBounds(305, 820, 185, 200);
-		panel.add(panel_1_1_1_1);
-
-		JPanel panel_1_2_1_1 = new JPanel();
-		panel_1_2_1_1.setBounds(545, 820, 185, 200);
-		panel.add(panel_1_2_1_1);
-
-		JPanel panel_1_3_1_1 = new JPanel();
-		panel_1_3_1_1.setBounds(61, 1065, 185, 200);
-		panel.add(panel_1_3_1_1);
-
-		JPanel panel_1_1_1_1_1 = new JPanel();
-		panel_1_1_1_1_1.setBounds(305, 1065, 185, 200);
-		panel.add(panel_1_1_1_1_1);
-
-		JPanel panel_1_2_1_1_1 = new JPanel();
-		panel_1_2_1_1_1.setBounds(545, 1065, 185, 200);
-		panel.add(panel_1_2_1_1_1);
 
 		JLabel lblNewLabel = new JLabel("PROXIMOS EVENTOS");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -329,6 +294,47 @@ public class EventsWindow2 extends JFrame{
 			}
 		});
 
+		JButton btnSeleccionar = new JButton("Selecciona");
+		btnSeleccionar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		btnSeleccionar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnSeleccionar.setBackground(new Color(255, 240, 240));
+		btnSeleccionar.setBounds(141, 525, 167, 29);
+		panel.add(btnSeleccionar);
+		
+		JTextField textField_1 = new JTextField();
+		textField_1.setToolTipText("Inserta la ruta del fichero");
+		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		textField_1.setColumns(10);
+		textField_1.setBounds(354, 525, 277, 29);
+		panel.add(textField_1);
+		
+		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnGuardar.setBackground(new Color(255, 240, 240));
+		btnGuardar.setBounds(220, 600, 129, 29);
+		panel.add(btnGuardar);
+		
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		JButton btnEditar = new JButton("Cargar");
+		btnEditar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnEditar.setBackground(new Color(255, 240, 240));
+		btnEditar.setBounds(390, 600, 119, 29);
+		panel.add(btnEditar);
+		
+		btnEditar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 	}
 	
 
