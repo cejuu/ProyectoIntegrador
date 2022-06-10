@@ -307,7 +307,7 @@ public class EventsWindow2 extends JFrame{
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowActivated(WindowEvent e) {
-				table.setModel(modelo.getTabla());
+				table.setModel(modelo.getTabla1());
 			}
 		});
 		

@@ -162,7 +162,7 @@ public class PantallaAdmin extends JFrame {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowActivated(WindowEvent e) {
-				tablaUsuario.setModel(modelo.getTabla());
+				tablaUsuario.setModel(modelo.getTabla2());
 			}
 		});
 	}

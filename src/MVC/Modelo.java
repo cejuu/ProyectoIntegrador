@@ -56,7 +56,8 @@ public class Modelo {
 	private final String ficheroConf = "bbdd.ini";
 	private String sqlTablaEventos = "Select * from eventos";
 	private String sqlTablaUsuario = "Select * from usuario";
-	private DefaultTableModel table;
+	private DefaultTableModel table1;
+	private DefaultTableModel table2;
 	
 	
 	private Vista vista;
@@ -256,7 +257,7 @@ public class Modelo {
 	}
 	
 	private void cargarTablaEventos() {
-		table = new DefaultTableModel();
+		table1 = new DefaultTableModel();
 		int numColumnas = getNumColumnas(sqlTablaEventos);
 		Object[] contenido = new Object[numColumnas];
 		PreparedStatement pstmt;
@@ -265,13 +266,13 @@ public class Modelo {
 			ResultSet rset = pstmt.executeQuery();
 			ResultSetMetaData rsmd = rset.getMetaData();
 			for (int i = 0; i < numColumnas; i++) {
-				table.addColumn(rsmd.getColumnName(i+1));
+				table1.addColumn(rsmd.getColumnName(i+1));
 			}
 			while (rset.next()) {
 				for (int col = 1; col <= numColumnas; col++) {
 					contenido[col - 1] = rset.getString(col);
 				}
-				table.addRow(contenido);
+				table1.addRow(contenido);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -280,7 +281,7 @@ public class Modelo {
 	}
 	
 	private void cargarTablaUsuario() {
-		table = new DefaultTableModel();
+		table2 = new DefaultTableModel();
 		int numColumnas = getNumColumnas(sqlTablaUsuario);
 		Object[] contenido = new Object[numColumnas];
 		PreparedStatement pstmt;
@@ -289,13 +290,13 @@ public class Modelo {
 			ResultSet rset = pstmt.executeQuery();
 			ResultSetMetaData rsmd = rset.getMetaData();
 			for (int i = 0; i < numColumnas; i++) {
-				table.addColumn(rsmd.getColumnName(i+1));
+				table2.addColumn(rsmd.getColumnName(i+1));
 			}
 			while (rset.next()) {
 				for (int col = 1; col <= numColumnas; col++) {
 					contenido[col - 1] = rset.getString(col);
 				}
-				table.addRow(contenido);
+				table2.addRow(contenido);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -330,8 +331,12 @@ public class Modelo {
 		return numFilas;
 	}
 
-	public DefaultTableModel getTabla() {
-		return table;
+	public DefaultTableModel getTabla1() {
+		return table1;
+	}
+	
+	public DefaultTableModel getTabla2() {
+		return table2;
 	}
 	
 }
