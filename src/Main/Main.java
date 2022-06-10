@@ -7,6 +7,7 @@ import MVC.Modelo;
 import MVC.Vista;
 import Usuario.CreateEventWindow;
 import Usuario.EventsWindow;
+import Usuario.EventsWindow2;
 import Usuario.InicioSesion;
 import Usuario.PantallaInicio;
 import Usuario.PantallaInicioFriends;
@@ -32,7 +33,7 @@ public class Main {
 		PantallaInicio home = new PantallaInicio();
 		PantallaInicioUsuario homeUser = new PantallaInicioUsuario();
 		PantallaInicioFriends homeFriends = new PantallaInicioFriends();
-		EventsWindow events = new EventsWindow();
+		EventsWindow2 events = new EventsWindow2();
 		CreateEventWindow createEvent = new CreateEventWindow();
 		Soporte support = new Soporte();
 		SportsWindow sport = new SportsWindow();
@@ -53,7 +54,7 @@ public class Main {
 		controlador.setPantallaInicio(home);
 		controlador.setPantallaInicioUsuario(homeUser);
 		controlador.setPantallaInicioFriends(homeFriends);
-		controlador.setEventsWindow(events);
+		controlador.setEventsWindow2(events);
 		controlador.setCreateEventWindow(createEvent);
 		controlador.setSoporte(support);
 		controlador.setSportsWindow(sport);

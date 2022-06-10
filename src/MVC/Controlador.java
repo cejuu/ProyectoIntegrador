@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import Admin.PantallaAdmin;
 import Usuario.CreateEventWindow;
 import Usuario.EventsWindow;
+import Usuario.EventsWindow2;
 import Usuario.InicioSesion;
 import Usuario.PantallaInicio;
 import Usuario.PantallaInicioFriends;
@@ -23,7 +24,7 @@ public class Controlador{
 		private PantallaInicio PantallaInicio;
 		private PantallaInicioUsuario PantallaInicioUsuario;
 		private PantallaInicioFriends PantallaInicioFriends;
-		private EventsWindow EventsWindow;
+		private EventsWindow2 EventsWindow;
 		private CreateEventWindow CreateEventWindow;
 		private Soporte Soporte;
 		private SportsWindow SportsWindow;
@@ -53,7 +54,7 @@ public class Controlador{
 		public void setPantallaInicioFriends(PantallaInicioFriends pantallaInicioFriends) {
 			PantallaInicioFriends = pantallaInicioFriends;
 		}
-		public void setEventsWindow(EventsWindow eventsWindow) {
+		public void setEventsWindow2(EventsWindow2 eventsWindow) {
 			EventsWindow = eventsWindow;
 		}
 		public void setCreateEventWindow(CreateEventWindow createEventWindow) {

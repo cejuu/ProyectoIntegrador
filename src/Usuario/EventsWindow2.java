@@ -6,6 +6,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JToolBar;
+import javax.swing.ListSelectionModel;
 import javax.swing.JInternalFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JTabbedPane;
@@ -31,6 +32,8 @@ import javax.swing.JEditorPane;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 import javax.swing.border.LineBorder;
 
@@ -46,6 +49,7 @@ import java.awt.Component;
 import java.sql.*;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import java.awt.FlowLayout;
 public class EventsWindow2 extends JFrame{
 	private Controlador controlador;
 	private Modelo modelo;
@@ -278,31 +282,34 @@ public class EventsWindow2 extends JFrame{
 		btnAdd.setBackground(new Color(0, 0, 0, 0));
 		btnAdd.setOpaque(false);
 		
+		
+		
 		JPanel panel_1_1 = new JPanel();
-		panel_1_1.setLayout(null);
 		panel_1_1.setBorder(new LineBorder(new Color(255, 153, 153), 3, true));
+		panel_1_1.setBackground(new Color(255, 228, 225));
 		panel_1_1.setBounds(46, 195, 702, 318);
 		panel.add(panel_1_1);
+		panel_1_1.setLayout(null);
+		
+		JScrollPane scrollTable = new JScrollPane();
+		scrollTable.setBounds(4, 4, 694, 310);
+		panel_1_1.add(scrollTable);
 		
 		table = new JTable();
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setForeground(new Color(254, 254, 254));
 		table.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-			},
-			new String[] {
-				"New column", "New column", "New column", "New column", "New column"
-			}
-		));
+		
 		table.setBackground(new Color(255, 228, 225));
-		table.setBounds(4, 4, 694, 310);
-		panel_1_1.add(table);
+		scrollTable.setViewportView(table);
+		scrollTable.setBackground(new Color(255, 228, 225));
+		
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowActivated(WindowEvent e) {
+				table.setModel(modelo.getTabla());
+			}
+		});
 		
 		textField.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {

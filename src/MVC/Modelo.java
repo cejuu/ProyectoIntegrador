@@ -10,6 +10,7 @@ import java.util.Properties;
 
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
 
 import Admin.PantallaAdmin;
 import Usuario.Config;
@@ -53,8 +54,8 @@ public class Modelo {
 	private OutputStream salida;
 	private String respuesta;
 	private final String ficheroConf = "bbdd.ini";
-	
-	
+	private String sqlTablaEventos = "Select * from eventos";
+	private DefaultTableModel table;
 	
 	
 	private Vista vista;
@@ -252,4 +253,6 @@ public class Modelo {
 			
 		}
 	}
+	
+	
 }
