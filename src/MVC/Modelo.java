@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.sql.*;
 import java.util.Properties;
@@ -337,6 +338,27 @@ public class Modelo {
 	
 	public DefaultTableModel getTabla2() {
 		return table2;
+	}
+	
+	public void guardarTablaEventos() {
+		File rutaTablaEV = new File(System.getProperty("user.dir"));
+		JFileChooser file = new JFileChooser(rutaTablaEV);
+		int selecionados = file.showSaveDialog(events2.getScrollPane());
+		if(selecionados == JFileChooser.APPROVE_OPTION){
+			File fch = file.getSelectedFile();			
+		}
+		try {
+			
+			FileOutputStream foutput = new FileOutputStream(fichero);
+			ObjectOutputStream ooutput = new ObjectOutputStream(foutput);
+			exportarTablas Tabla = new exportarTabla(tablaEventos);
+			ooutput.writeObject(Tabla);
+			foutput.close();
+			ooutput.close();
+			
+		} catch (IOException e) {
+			
+		}
 	}
 	
 }

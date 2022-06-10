@@ -55,6 +55,7 @@ public class EventsWindow2 extends JFrame{
 	private Controlador controlador;
 	private Modelo modelo;
 	private JTable table;
+	public JScrollPane scrollPane;
 	public void setModelo(Modelo modelo) {
 		this.modelo = modelo;
 		
@@ -220,7 +221,7 @@ public class EventsWindow2 extends JFrame{
 		textField.setBounds(130, 100, 522, 33);
 		panel.add(textField);
 
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		scrollPane.setBounds(153, 54, 792, 570);
 		getContentPane().add(scrollPane);
 		scrollPane.setViewportView(panel);
@@ -340,6 +341,9 @@ public class EventsWindow2 extends JFrame{
 
 	public void setControlador(Controlador controlador) {
 		this.controlador = controlador;
+	}
+	public Component getScrollPane() {
+		return this.scrollPane;
 	}
 }
 
