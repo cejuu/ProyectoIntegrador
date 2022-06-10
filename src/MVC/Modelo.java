@@ -255,4 +255,34 @@ public class Modelo {
 	}
 	
 	
+	private int getNumColumnas(String sql) {
+		int num = 0;
+		try {
+			PreparedStatement pstmt = conexion.prepareStatement(sql);
+			ResultSet rset = pstmt.executeQuery();
+			ResultSetMetaData rsmd = rset.getMetaData();
+			num = rsmd.getColumnCount();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return num;
+	}
+
+	private int getNumFilas(String sql) {
+		int numFilas = 0;
+		try {
+			PreparedStatement pstmt = conexion.prepareStatement(sql);
+			ResultSet rset = pstmt.executeQuery();
+			while (rset.next())
+				numFilas++;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return numFilas;
+	}
+
+	public DefaultTableModel getTabla() {
+		return table;
+	}
+	
 }
