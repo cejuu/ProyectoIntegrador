@@ -233,6 +233,7 @@ public class PantallaInicioFriends extends JFrame{
 		btnEventos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controlador.cambioPantalla(4,5);
+				modelo.cargarTablaEventos();
 			}
 		});
 		

@@ -143,7 +143,8 @@ public class CreateEventWindow extends JFrame{
 		btnEventos.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				controlador.cambioPantalla(6, 8);
+				controlador.cambioPantalla(6, 5);
+				modelo.cargarTablaEventos();
 			}
 		});
 		btnEventos.setFont(new Font("Tahoma", Font.PLAIN, 14));

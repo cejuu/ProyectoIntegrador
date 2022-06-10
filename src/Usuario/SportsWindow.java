@@ -139,6 +139,7 @@ public class SportsWindow extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				controlador.cambioPantalla(8,5);
+				modelo.cargarTablaEventos();
 			}
 		});
 		btnEventos.setFont(new Font("Tahoma", Font.PLAIN, 14));

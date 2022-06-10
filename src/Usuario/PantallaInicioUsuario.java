@@ -210,6 +210,7 @@ public class PantallaInicioUsuario extends JFrame {
 		btnEventos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controlador.cambioPantalla(3, 5);
+				modelo.cargarTablaEventos();
 			}
 		});
 		btnEventos.setBackground(new Color(0, 0, 0, 0));

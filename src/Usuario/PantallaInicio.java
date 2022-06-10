@@ -142,6 +142,7 @@ public class PantallaInicio extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				controlador.cambioPantalla(2,5);
+				modelo.cargarTablaEventos();
 			}
 		});
 		btnEventos.setBackground(new Color(0, 0, 0, 0));

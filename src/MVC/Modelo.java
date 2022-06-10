@@ -256,7 +256,7 @@ public class Modelo {
 		}
 	}
 	
-	private void cargarTablaEventos() {
+	public void cargarTablaEventos() {
 		table1 = new DefaultTableModel();
 		int numColumnas = getNumColumnas(sqlTablaEventos);
 		Object[] contenido = new Object[numColumnas];
@@ -280,7 +280,7 @@ public class Modelo {
 		
 	}
 	
-	private void cargarTablaUsuario() {
+	public void cargarTablaUsuario() {
 		table2 = new DefaultTableModel();
 		int numColumnas = getNumColumnas(sqlTablaUsuario);
 		Object[] contenido = new Object[numColumnas];
