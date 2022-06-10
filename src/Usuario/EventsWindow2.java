@@ -321,7 +321,7 @@ public class EventsWindow2 extends JFrame{
 		
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				modelo.guardarTablaEventos();
 			}
 		});
 		
@@ -333,7 +333,7 @@ public class EventsWindow2 extends JFrame{
 		
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				modelo.cargarTabla();
 			}
 		});
 	}
