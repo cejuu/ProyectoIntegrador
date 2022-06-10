@@ -342,7 +342,7 @@ public class Modelo {
 		int selecionados = file.showSaveDialog(events2.getScrollPane());
 		if (selecionados == JFileChooser.APPROVE_OPTION) {
 			File fch = file.getSelectedFile();
-		}
+		
 		try {
 
 			FileOutputStream foutput = new FileOutputStream(fichero);
@@ -354,6 +354,7 @@ public class Modelo {
 
 		} catch (IOException e) {
 
+		}
 		}
 	}
 
