@@ -351,7 +351,7 @@ public class Modelo {
 			
 			FileOutputStream foutput = new FileOutputStream(fichero);
 			ObjectOutputStream ooutput = new ObjectOutputStream(foutput);
-			exportarTablas Tabla = new exportarTabla(tablaEventos);
+			expTab Tabla = new expTab(table1);
 			ooutput.writeObject(Tabla);
 			foutput.close();
 			ooutput.close();
