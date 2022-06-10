@@ -254,6 +254,30 @@ public class Modelo {
 		}
 	}
 	
+	private void cargarTablaEventos() {
+		table = new DefaultTableModel();
+		int numColumnas = getNumColumnas(sqlTablaEventos);
+		Object[] contenido = new Object[numColumnas];
+		PreparedStatement pstmt;
+		try {
+			pstmt = conexion.prepareStatement(sqlTablaEventos);
+			ResultSet rset = pstmt.executeQuery();
+			ResultSetMetaData rsmd = rset.getMetaData();
+			for (int i = 0; i < numColumnas; i++) {
+				table.addColumn(rsmd.getColumnName(i+1));
+			}
+			while (rset.next()) {
+				for (int col = 1; col <= numColumnas; col++) {
+					contenido[col - 1] = rset.getString(col);
+				}
+				table.addRow(contenido);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	
 	private int getNumColumnas(String sql) {
 		int num = 0;
