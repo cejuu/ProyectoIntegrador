@@ -110,7 +110,7 @@ public class Modelo {
 		}
 	}
 
-	public String LoginSQL(String query, String usr, String NumColumn) {
+	public String LoginSQL(String query, String usr, int NumColumn) {
 		ResultSet resultado = null;
 		String resul = "";
 		try {
@@ -126,7 +126,7 @@ public class Modelo {
 	}
 
 	public boolean comprobarContra(String usuario, String contrasena) {
-		this.pass = LoginSQL("SELECT contrasena FROM Usuario WHERE NombreUser = ?", usuario, "NombreUser");
+		this.pass = LoginSQL("SELECT contrasena FROM usuario WHERE NombreUser = ?", usuario, 1);
 
 		if (contrasena.equals(pass)) {
 			return true;
