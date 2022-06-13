@@ -31,10 +31,6 @@ import Usuario.SportsWindow;
 import Usuario.infoevento;
 
 public class Modelo {
-	private String bd = "PI";
-	private String login = "root";
-	private String pwd = "";
-	private String url = "jdbc:mysql://localhost/" + bd;
 	private Connection conexion;
 
 	private PantallaAdmin admin;
@@ -68,30 +64,6 @@ public class Modelo {
 	private String pass = "";
 	private String rol = "";
 
-	public void setPwdBBDD(String usuario) {
-		this.pwd = usuario;
-	}
-
-	public String getPwdBBDD() {
-		return this.pwd;
-	}
-
-	public void setUsrBBDD(String usuario) {
-		this.login = usuario;
-	}
-
-	public String getUsrBBDD() {
-		return this.login;
-	}
-
-	public void setNameBBDD(String usuario) {
-		this.bd = usuario;
-	}
-
-	public String getNameBBDD() {
-		return this.bd;
-	}
-
 	public void setVista(Vista vista) {
 		this.vista = vista;
 	}
@@ -121,7 +93,7 @@ public class Modelo {
 	public void ConexSQL() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conexion = DriverManager.getConnection(propconfig.getProperty("bd"), propconfig.getProperty("login"),
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/"+(propconfig.getProperty("bd")), propconfig.getProperty("login"),
 					propconfig.getProperty("pwd"));
 			System.out.println(" - Conexion con MySQL establecida -");
 //            if (conexion != null) {
@@ -154,7 +126,7 @@ public class Modelo {
 	}
 
 	public boolean comprobarContra(String usuario, String contrasena) {
-		this.pass = LoginSQL("SELECT contrasena FROM Usuario WHERE NombreUsuario = ?", usuario, "NombreUsuario");
+		this.pass = LoginSQL("SELECT contrasena FROM Usuario WHERE NombreUser = ?", usuario, "NombreUser");
 
 		if (contrasena.equals(pass)) {
 			return true;
