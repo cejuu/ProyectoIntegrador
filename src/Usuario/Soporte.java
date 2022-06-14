@@ -225,6 +225,12 @@ public class Soporte extends JFrame{
 		lblNewLabel_2_1.setBounds(634, 0, 66, 64);
 		panel_1.add(lblNewLabel_2_1);
 		
+		JButton btnNewButton_1_1 = new JButton("");
+		btnNewButton_1_1.setOpaque(false);
+		btnNewButton_1_1.setBackground(new Color(0, 0, 0, 0));
+		btnNewButton_1_1.setBounds(637, 0, 66, 64);
+		panel_1.add(btnNewButton_1_1);
+		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(255, 153, 153));
 		panel_2.setBounds(133, 406, 703, 65);
@@ -243,6 +249,12 @@ public class Soporte extends JFrame{
 		lblNewLabel_2_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2_2.setBounds(634, 1, 66, 64);
 		panel_2.add(lblNewLabel_2_2);
+		
+		JButton btnNewButton_1_2 = new JButton("");
+		btnNewButton_1_2.setOpaque(false);
+		btnNewButton_1_2.setBackground(new Color(0, 0, 0, 0));
+		btnNewButton_1_2.setBounds(637, 1, 66, 64);
+		panel_2.add(btnNewButton_1_2);
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(new Color(255, 153, 153));
@@ -263,6 +275,12 @@ public class Soporte extends JFrame{
 		lblNewLabel_2_3.setBounds(634, 0, 66, 64);
 		panel_3.add(lblNewLabel_2_3);
 		
+		JButton btnNewButton_1_2_1 = new JButton("");
+		btnNewButton_1_2_1.setOpaque(false);
+		btnNewButton_1_2_1.setBackground(new Color(0, 0, 0, 0));
+		btnNewButton_1_2_1.setBounds(637, 0, 66, 64);
+		panel_3.add(btnNewButton_1_2_1);
+		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBounds(0, 0, 933, 69);
 		panel_4.setBackground(new Color(255, 153, 153));
@@ -282,7 +300,7 @@ public class Soporte extends JFrame{
 		btnNewButton.setOpaque(false);
 		btnNewButton.setIcon(new ImageIcon(Soporte.class.getResource("/imagenes/undo-alt-free-icon-font (1).png")));
 		
-		JLabel lblNewLabel_1 = new JLabel("Soporte de SportsChoiche");
+		JLabel lblNewLabel_1 = new JLabel("Soporte de SportsChoice");
 		lblNewLabel_1.setBounds(88, 10, 342, 40);
 		panel_4.add(lblNewLabel_1);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
