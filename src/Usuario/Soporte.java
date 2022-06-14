@@ -212,7 +212,7 @@ public class Soporte extends JFrame{
 		panel6.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblcomoPuedoCambiar_1 = new JLabel("\u00BFComo puedo cambiar mi nombre?");
+		JLabel lblcomoPuedoCambiar_1 = new JLabel("\u00BFComo puedo cambiar la contrase\u00F1a?");
 		lblcomoPuedoCambiar_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblcomoPuedoCambiar_1.setFont(new Font("Verdana", Font.PLAIN, 20));
 		lblcomoPuedoCambiar_1.setBackground(Color.WHITE);
@@ -237,7 +237,7 @@ public class Soporte extends JFrame{
 		panel6.add(panel_2);
 		panel_2.setLayout(null);
 		
-		JLabel lblcomoPuedoCambiar_2 = new JLabel("\u00BFComo puedo cambiar mi nombre?");
+		JLabel lblcomoPuedoCambiar_2 = new JLabel("\u00BFComo puedo cambiar mi correo?");
 		lblcomoPuedoCambiar_2.setHorizontalAlignment(SwingConstants.LEFT);
 		lblcomoPuedoCambiar_2.setFont(new Font("Verdana", Font.PLAIN, 20));
 		lblcomoPuedoCambiar_2.setBackground(Color.WHITE);
@@ -262,7 +262,7 @@ public class Soporte extends JFrame{
 		panel6.add(panel_3);
 		panel_3.setLayout(null);
 		
-		JLabel lblcomoPuedoCambiar_3 = new JLabel("\u00BFComo puedo cambiar mi nombre?");
+		JLabel lblcomoPuedoCambiar_3 = new JLabel("\u00BFComo puedo cambiar mi usuario?");
 		lblcomoPuedoCambiar_3.setHorizontalAlignment(SwingConstants.LEFT);
 		lblcomoPuedoCambiar_3.setFont(new Font("Verdana", Font.PLAIN, 20));
 		lblcomoPuedoCambiar_3.setBackground(Color.WHITE);
