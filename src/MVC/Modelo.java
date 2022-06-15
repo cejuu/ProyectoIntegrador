@@ -110,15 +110,16 @@ public class Modelo {
 		}
 	}
 
-	public String LoginSQL(String query, String usr, int NumColumn) {
+	public String LoginSQL(String query, String usr, String NumColumn) {
 		ResultSet resultado = null;
 		String resul = "";
 		try {
 			PreparedStatement pstmt = conexion.prepareStatement(query);
 			pstmt.setString(1, usr);
 			resultado = pstmt.executeQuery();
+			resultado.next();
 			resul = resultado.getString(NumColumn);
-			pstmt.close();
+			
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 		}
@@ -126,7 +127,7 @@ public class Modelo {
 	}
 
 	public boolean comprobarContra(String usuario, String contrasena) {
-		this.pass = LoginSQL("SELECT contrasena FROM usuario WHERE NombreUser = ?", usuario, 1);
+		this.pass = LoginSQL("SELECT contrasena FROM usuario WHERE NombreUser = ?", usuario,"contrasena");
 
 		if (contrasena.equals(pass)) {
 			return true;
