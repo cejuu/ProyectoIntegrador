@@ -211,8 +211,11 @@ public class Config extends JFrame{
 				}else {
 					btnEditar.setText("Editar");
 					txtfUsuario.setEditable(false);
+					txtfUsuario.setText(modelo.getPropconfig().getProperty("login"));
 					txtfNombBbdd.setEditable(false);
+					txtfNombBbdd.setText(modelo.getPropconfig().getProperty("bd"));
 					txtfContrasena.setEditable(false);
+					txtfContrasena.setText(modelo.getPropconfig().getProperty("pwd"));  
 					txtfPuerto.setEditable(false);
 				}
 			}

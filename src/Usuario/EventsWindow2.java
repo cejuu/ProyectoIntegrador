@@ -56,6 +56,7 @@ public class EventsWindow2 extends JFrame{
 	private Modelo modelo;
 	private JTable table;
 	public JScrollPane scrollPane;
+	
 	public void setModelo(Modelo modelo) {
 		this.modelo = modelo;
 		
@@ -212,6 +213,54 @@ public class EventsWindow2 extends JFrame{
 		panel.setBounds(153, 53, 760, 510);
 		panel.setLayout(null);
 		panel.setPreferredSize(new Dimension(730, 700));
+		
+		JButton btnEvento1 = new JButton("");
+		btnEvento1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.cambioPantalla(5, 11);
+				modelo.cargarInfoEventos(1);
+			}
+		});
+		btnEvento1.setBackground(new Color(0, 0, 0, 0));
+		btnEvento1.setOpaque(false);
+		btnEvento1.setBounds(51, 220, 692, 17);
+		panel.add(btnEvento1);
+		
+		JButton btnEvento2 = new JButton("");
+		btnEvento2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.cambioPantalla(5, 11);
+				modelo.cargarInfoEventos(2);
+			}
+		});
+		btnEvento2.setBackground(new Color(0, 0, 0, 0));
+		btnEvento2.setOpaque(false);
+		btnEvento2.setBounds(51, 237, 692, 17);
+		panel.add(btnEvento2);
+		
+		JButton btnEvento3 = new JButton("");
+		btnEvento3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.cambioPantalla(5, 11);
+				modelo.cargarInfoEventos(3);
+			}
+		});
+		btnEvento3.setBackground(new Color(0, 0, 0, 0));
+		btnEvento3.setOpaque(false);
+		btnEvento3.setBounds(51, 254, 692, 17);
+		panel.add(btnEvento3);
+		
+		JButton btnEvento4 = new JButton("");
+		btnEvento4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.cambioPantalla(5, 11);
+				modelo.cargarInfoEventos(4);
+			}
+		});
+		btnEvento4.setBackground(new Color(0, 0, 0, 0));
+		btnEvento4.setOpaque(false);
+		btnEvento4.setBounds(51, 271, 692, 17);
+		panel.add(btnEvento4);
 
 		TextField textField = new TextField();
 		textField.setFont(new Font("Dialog", Font.PLAIN, 18));

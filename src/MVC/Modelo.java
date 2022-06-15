@@ -356,5 +356,10 @@ public class Modelo {
 		
 	}
 	
+	public void cargarInfoEventos(int id) {
+		
+	}
+
 	
+
 }

@@ -107,8 +107,8 @@ public class Controlador{
 		}
 		public void guardar() {
 			String[] datosConexion = {
-					((Config) pantallas[12]).getTxtUsuario().getText(),
 					((Config) pantallas[12]).getTxtNombreBbdd().getText(),
+					((Config) pantallas[12]).getTxtUsuario().getText(),
 					((Config) pantallas[12]).getTxtContrasena().getText()
 					
 			};
