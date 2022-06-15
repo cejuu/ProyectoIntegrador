@@ -357,7 +357,15 @@ public class Modelo {
 	}
 	
 	public void cargarInfoEventos(int id) {
-		
+		PreparedStatement pstmt;
+		try {
+			pstmt = conexion.prepareStatement(sqlTablaEventos + "where id=" + id);
+			ResultSet rset = pstmt.executeQuery();
+			ResultSetMetaData rsmd = rset.getMetaData(); 
+		}catch(Exception e) {
+			
+		}
+			
 	}
 
 	
