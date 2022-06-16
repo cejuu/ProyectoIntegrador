@@ -218,7 +218,8 @@ public class EventsWindow2 extends JFrame{
 		btnEvento1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controlador.cambioPantalla(5, 11);
-				modelo.cargarInfoEventos(1);
+				modelo.cargarInfoEventos((int) table.getModel().getValueAt(1, 1));
+
 			}
 		});
 		btnEvento1.setBackground(new Color(0, 0, 0, 0));
@@ -230,7 +231,6 @@ public class EventsWindow2 extends JFrame{
 		btnEvento2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controlador.cambioPantalla(5, 11);
-				modelo.cargarInfoEventos(2);
 			}
 		});
 		btnEvento2.setBackground(new Color(0, 0, 0, 0));
@@ -242,7 +242,6 @@ public class EventsWindow2 extends JFrame{
 		btnEvento3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controlador.cambioPantalla(5, 11);
-				modelo.cargarInfoEventos(3);
 			}
 		});
 		btnEvento3.setBackground(new Color(0, 0, 0, 0));
@@ -254,7 +253,6 @@ public class EventsWindow2 extends JFrame{
 		btnEvento4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controlador.cambioPantalla(5, 11);
-				modelo.cargarInfoEventos(4);
 			}
 		});
 		btnEvento4.setBackground(new Color(0, 0, 0, 0));

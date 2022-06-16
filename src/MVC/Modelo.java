@@ -55,6 +55,16 @@ public class Modelo {
 	private final String ficheroConf = "bbdd.ini";
 	private String sqlTablaEventos = "Select * from eventos";
 	private String sqlTablaUsuario = "Select * from usuario";
+	private String infoEvento;
+	private String nombreUsuario;
+	private String infoCreador;
+	private String infoDeporte;
+	private String infoFecha;
+	private String infoHora;
+	private String infoNivel;
+	private String infoEdad;
+	private String infoUbicacion;
+
 	private DefaultTableModel table1;
 	private DefaultTableModel table2;
 
@@ -119,7 +129,6 @@ public class Modelo {
 			resultado = pstmt.executeQuery();
 			resultado.next();
 			resul = resultado.getString(NumColumn);
-			
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 		}
@@ -128,8 +137,9 @@ public class Modelo {
 
 	public boolean comprobarContra(String usuario, String contrasena) {
 		this.pass = LoginSQL("SELECT contrasena FROM usuario WHERE NombreUser = ?", usuario,"contrasena");
-
+		
 		if (contrasena.equals(pass)) {
+			nombreUsuario = usuario;
 			return true;
 		} else {
 			return false;
@@ -240,7 +250,7 @@ public class Modelo {
 				table1.addColumn(rsmd.getColumnName(i + 1));
 			}
 			while (rset.next()) {
-				for (int col = 1; col <= numColumnas; col++) {
+				for (int col = 1; col <= 6; col++) {
 					contenido[col - 1] = rset.getString(col);
 				}
 				table1.addRow(contenido);
@@ -356,18 +366,65 @@ public class Modelo {
 		
 	}
 	
-	public void cargarInfoEventos(int id) {
+	public void cargarInfoEventos(int i) {
 		PreparedStatement pstmt;
 		try {
-			pstmt = conexion.prepareStatement(sqlTablaEventos + "where id=" + id);
+			pstmt = conexion.prepareStatement(sqlTablaEventos + "where id=" + i);
 			ResultSet rset = pstmt.executeQuery();
-			ResultSetMetaData rsmd = rset.getMetaData(); 
+			ResultSetMetaData rsmd = rset.getMetaData();
+			if(i > 0) {
+				infoCreador = rset.getString(4);
+				infoEvento = rset.getString(2);
+				infoDeporte = rset.getString(3);
+				infoFecha = rset.getString(5);
+				infoHora = rset.getString(6);
+				infoNivel = rset.getString(7);
+				infoEdad = rset.getString(8);
+				infoUbicacion = rset.getString(9);
+			}
 		}catch(Exception e) {
 			
 		}
 			
 	}
-
 	
+	public String getNombreUsuario() {
+		return nombreUsuario;
+	}
 
+	public infoevento getInfoevent() {
+		return infoevent;
+	}
+
+	public String getInfoEvento() {
+		return infoEvento;
+	}
+
+	public String getInfoCreador() {
+		return infoCreador;
+	}
+
+	public String getInfoDeporte() {
+		return infoDeporte;
+	}
+
+	public String getInfoFecha() {
+		return infoFecha;
+	}
+
+	public String getInfoHora() {
+		return infoHora;
+	}
+	
+	public String getInfoNivel() {
+		return infoNivel;
+	}
+
+	public String getInfoEdad() {
+		return infoEdad;
+	}
+
+	public String getInfoUbicacion() {
+		return infoUbicacion;
+	}
 }

@@ -229,6 +229,7 @@ public class infoevento extends JFrame{
 		txtUbicacin.setBounds(69, 240, 653, 31);
 		panelPadel.add(txtUbicacin);
 		txtUbicacin.setColumns(10);
+		txtUbicacin.setText(modelo.getInfoUbicacion());
 		
 		JButton btnNewButton = new JButton("Desunirse");
 		btnNewButton.setBackground(new Color(240, 128, 128));
@@ -274,21 +275,25 @@ public class infoevento extends JFrame{
 		lblNewLabel_3.setFont(new Font("Verdana", Font.PLAIN, 30));
 		lblNewLabel_3.setBounds(251, 10, 289, 49);
 		panelPadel.add(lblNewLabel_3);
+		lblNewLabel_3.setText(modelo.getInfoEvento());
 		
 		JLabel lblNewLabel_4 = new JLabel("Medio");
 		lblNewLabel_4.setFont(new Font("Verdana", Font.PLAIN, 20));
 		lblNewLabel_4.setBounds(69, 114, 179, 42);
 		panelPadel.add(lblNewLabel_4);
+		lblNewLabel_4.setText(modelo.getInfoNivel());
 		
 		JLabel lblNewLabel_4_1 = new JLabel("18-25 a\u00F1os");
 		lblNewLabel_4_1.setFont(new Font("Verdana", Font.PLAIN, 20));
 		lblNewLabel_4_1.setBounds(302, 114, 179, 42);
 		panelPadel.add(lblNewLabel_4_1);
+		lblNewLabel_4_1.setText(modelo.getInfoEdad());
 		
 		JLabel lblNewLabel_4_2 = new JLabel("28/05/2022");
 		lblNewLabel_4_2.setFont(new Font("Verdana", Font.PLAIN, 20));
 		lblNewLabel_4_2.setBounds(543, 114, 179, 42);
-		panelPadel.add(lblNewLabel_4_2);
+		panelPadel.add(lblNewLabel_4_2);	
+		lblNewLabel_4_2.setText(modelo.getInfoFecha());
 		
 		JLabel lblFecha = new JLabel("Fecha");
 		lblFecha.setFont(new Font("Verdana", Font.PLAIN, 20));

@@ -102,8 +102,9 @@ public class PantallaInicioUsuario extends JFrame {
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNombre.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNombre.setBounds(34, 5, 169, 37);
+		
 		panel_1_1.add(lblNombre);
-
+		
 		JButton btnMiCuenta = new JButton("Mi Cuenta");
 		btnMiCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
