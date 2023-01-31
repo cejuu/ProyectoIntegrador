@@ -41,7 +41,6 @@ public class Main {
 		PantallaAdmin admin = new PantallaAdmin();
 		infoevento torneo = new infoevento();
 		
-		
 		modelo.setVista(vista);
 		
 		vista.setControlador(controlador);
